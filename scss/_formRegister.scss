@@ -1,0 +1,19 @@
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-register input {
+  font-size: 1.5em;
+  text-align: center;
+  color: #FFFFFF;
+  background: #221C1C;;
+  width: 251px;
+  height: 54px;
+  box-shadow: inset 12px 12px 25px rgba(0, 0, 0, 0.25), inset -12px -12px 25px #1D1919;
+  border-radius: 10px;
+  border-style: none;
+  margin-bottom: 50px;
+}
