@@ -25,13 +25,14 @@
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1",
     "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.2",
-    "style-loader": "^1.1.2"
+    "style-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "react": "^16.8.4",

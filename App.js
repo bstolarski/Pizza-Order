@@ -2,19 +2,28 @@ import React from 'react';
 import './scss/main.scss';
 import ReactDom from 'react-dom';
 import {HashRouter, Switch, Route} from "react-router-dom";
-import HeaderPage from './components/HeaderPage';
-import LandingPage from './components/LandingPage';
-import FormRegister from "./components/FormRegister";
+import HeaderPage from './js/components/HeaderPage';
+import LandingPage from './js/components/LandingPage';
+import FormRegister from "./js/components/FormRegister";
+import backgroundImage from './assets/pizza.png'
 
 function App() {
+
+    let backGroundStyle = {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+    };
     return (
         <HashRouter>
             <>
-                <HeaderPage/>
-                <Switch>
-                    <Route exact path={"/"} component={LandingPage}/>
-                    <Route exact path={"/FormRegister"} component={FormRegister}/>
-                </Switch>
+                <div style={{backGroundStyle}} className="container">
+                    <HeaderPage/>
+                    <Switch>
+                        <Route exact path="/" component={LandingPage}/>
+                        <Route exact path="/FormRegister" component={FormRegister}/>
+                    </Switch>
+                </div>
             </>
         </HashRouter>
     )

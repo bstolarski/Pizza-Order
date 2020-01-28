@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4em;
-  line-height: 95px;
-  text-align: center;
-  color: $primary-color;
-  padding-top: 89px;
-  padding-bottom: 50px;
+
+  h1 {
+    font-size: 4em;
+    line-height: 95px;
+    text-align: center;
+    color: $primary-color;
+  }
 }

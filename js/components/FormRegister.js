@@ -13,6 +13,11 @@ export default class FormRegister extends Component {
                 <NavLink to='/CreatePizza'>
                     <button className='btn'>Create</button>
                 </NavLink>
+                <p><span>Or</span></p>
+                <p>Already have an Account?
+                    <NavLink to='/FormLogin'>
+                        Sign in
+                    </NavLink></p>
             </form>
         )
     }
