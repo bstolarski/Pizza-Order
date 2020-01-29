@@ -1,9 +1,26 @@
 .btn {
   color: $font-color-white;
-  font-size: 3em;
-  width: 222px;
-  height: 84px;
   background: linear-gradient(180deg, $primary-color 36.98%, rgba(239, 20, 20, 0) 100%);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+}
+.btn-primary {
+  font-size: 3em;
+  width: 222px;
+  height: 84px;
+}
+.btn-pizza {
+  font-size: 3em;
+  width: 302px;
+  height: 73px;
+}
+.btn-size {
+  font-size: 2em;
+  width: 55px;
+  height: 55px;
+}
+.btn-secondary {
+  font-size: 1.5em;
+  width: 194px;
+  height: 53px;
 }

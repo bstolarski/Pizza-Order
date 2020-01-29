@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Margarita",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Capriciosa",
+      "price": 23
+    },
+    {
+      "id": 3,
+      "name": "Peperoni",
+      "price": 28
+    },
+    {
+      "id": 4,
+      "name": "Napoletana",
+      "price": 30
+    },
+    {
+      "id": 5,
+      "name": "BBQ",
+      "price": 30
+    },
+    {
+      "id": 6,
+      "name": "Diavola",
+      "price": 32
+      }
+  ],
+  "extras": [
+    {
+      "id": 1,
+      "name": "Extra Cheese",
+      "price": 2.50
+    },
+    {
+      "id": 2,
+      "name": "Extra Ham",
+      "price": 2.50
+    },
+    {
+      "id": 3,
+      "name": "Mushrooms",
+      "price": 2.50
+    },
+    {
+      "id": 4,
+      "name": "Onion",
+      "price": 2.50
+    },
+    {
+      "id": 5,
+      "name": "Pepper",
+      "price": 2.50
+    },
+    {
+      "id": 6,
+      "name": "Broccoli",
+      "price": 2.50
+    },
+    {
+      "id": 7,
+      "name": "Olive",
+      "price": 2.50
+    },
+    {
+      "id": 8,
+      "name": "Add Sauce",
+      "price": 2.50
+    }
+  ]
+}

@@ -10,7 +10,9 @@ $font-color-brown: #4B4646;
 //Buttons
 @import "components/buttons";
 //Form Register
-@import "formRegister";
+@import "form";
+//Pizza Choose
+@import "pizza-choose";
 
 .container {
   max-width: 414px;
@@ -19,4 +21,8 @@ $font-color-brown: #4B4646;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+input[type="radio"] {
+  display: none;
 }
