@@ -1,12 +1,10 @@
-import Order from "../model/Extra";
+export default function AddToCartLocalStorageServices(itemToAdd) {
+    let items = JSON.parse(window.localStorage.getItem('order'));
+    let newItems = [...items, itemToAdd];
+    window.localStorage.setItem('order', JSON.stringify(newItems));
+    return newItems;
+}
 
-export default function AddToCartLocalStorageServices(data) {
-    const order = data.map(el =>
-        new Order(
-            el.id,
-            el.name,
-            el.price
-        )
-    );
-    window.localStorage.setItem('order', JSON.stringify(order));
+export function GetOrderFromLocalStorage(){
+    return JSON.parse(window.localStorage.getItem('order'));
 }

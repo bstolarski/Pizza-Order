@@ -8,9 +8,11 @@ import FormLogin from "./js/components/FormLogin";
 import CreatePizza from "./js/components/CreatePizza";
 import PizzaChoose from "./js/components/PizzaChoose";
 import ExtrasChoose from "./js/components/ExtrasChoose";
+import Cart from "./js/components/Cart";
+import ConfirmOrderForm from "./js/components/ConfirmOrderForm";
+import CompleteOrder from "./js/components/CompleteOrder";
 
 function App() {
-    const [order, setOrder] = useState([]);
 
     let backGroundStyle = {
         backgroundImage: `url(./assets/pizza.png)`,
@@ -29,6 +31,9 @@ function App() {
                         <Route exact path="/CreatePizza" component={CreatePizza}/>
                         <Route exact path="/PizzaChoose" component={PizzaChoose}/>
                         <Route exact path='/ExtrasChoose' component={ExtrasChoose}/>
+                        <Route exact path='/Cart' component={Cart}/>
+                        <Route exact path='/ConfirmOrderForm' component={ConfirmOrderForm}/>
+                        <Route exact path='/CompleteOrder' component={CompleteOrder}/>
                     </Switch>
                 </div>
             </>

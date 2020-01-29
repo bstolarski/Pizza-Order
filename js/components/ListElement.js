@@ -14,8 +14,8 @@ export default class ListElement extends Component {
         const {id, name, price} = this.props;
         return (
             <>
-                <label key={id} className="btn">{name} - {price} zł
-                    <input onChange={this.handleChangePizza} type="radio" value={name} name="pizzaChose"/></label>
+                <label className="btn">{name} - {price} zł
+                    <input key={id} onChange={this.handleChangePizza} type="radio" value={name} name="pizzaChose"/></label>
             </>
         )
     }

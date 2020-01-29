@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
+import HeaderPage from "./HeaderPage";
 
-export default class ListElement extends Component {
-
-    handleChangePizza = () => {
-        const {eventClick, id, name, price} = this.props;
-        if (typeof (eventClick) === "function") {
-            eventClick(id, name, price);
-        }
-    };
+export default class Cart extends Component {
 
     render() {
-        const {id, name, price} = this.props;
         return (
             <>
-                <label key={id} className="btn">{name} - {price} zł
-                    <input onChange={this.handleChangePizza} type="radio" value={name} name="pizzaChose"/></label>
+                <HeaderPage/>
+                <button className="btn btn-plus">+</button>
+                <p>Cena</p>
+                <div>
+                    <p>Pizza - nazwa</p>
+                    <p>Rozmiar</p>
+                </div>
+                <NavLink to='/ConfirmOrderForm'>
+                    <button className='btn'>Place Order Suma zamówienia</button>
+                </NavLink>
             </>
         )
     }

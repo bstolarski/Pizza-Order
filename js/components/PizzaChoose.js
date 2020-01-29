@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ProductsRestApiService from "../services/ProductsRestApiServices";
-import AddToCartLocalStorageServices from "../services/AddToCartLocalStorageServices";
+import AddToCartLocalStorageServices, {GetOrderFromLocalStorage} from "../services/AddToCartLocalStorageServices";
 import ListElement from "./ListElement";
 import {NavLink} from "react-router-dom";
 
@@ -8,31 +8,35 @@ export default class PizzaChoose extends Component {
     state = {
         products: null,
         err: null,
-        cartList: [],
-        currentChoose: null
+        currentChoose: null,
+        orderPositions: null
     };
 
     componentDidMount() {
+        this.setState({
+            orderPositions: GetOrderFromLocalStorage()
+        });
+
         ProductsRestApiService.getProducts(
             products => this.setState({products: products}),
             err => this.setState({err: err})
         )
     }
 
-    handleClick = (id, name, price) => {
+    handleChange = (id, name, price) => {
         this.setState({
             currentChoose: {id, name, price}
         })
     };
 
     handleAddToCart = () => {
-        const {cartList, currentChoose} = this.state;
         this.setState({
-            cartList: [...cartList, currentChoose]
-        });
-        let localOrder = localStorage.getItem('order');
-        let newOrder = [...localOrder,this.state.cartList];
-        AddToCartLocalStorageServices(newOrder);
+            orderPosition: [...this.state.orderPositions, this.state.currentChoose]
+        }, () => {
+            this.setState({
+                orderPositions: AddToCartLocalStorageServices(this.state.orderPositions)
+            })
+        })
     };
 
     render() {
@@ -46,7 +50,7 @@ export default class PizzaChoose extends Component {
                 <ul className='list-group'>
                     {this.state.products.map(product =>
                         <ListElement id={product.id} name={product.name} price={product.price}
-                                     eventClick={this.handleClick}/>
+                                     eventClick={this.handleChange}/>
                     )}
                 </ul>
                 <NavLink to='CreatePizza'>
