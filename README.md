@@ -1,2 +1,2 @@
 # Pizza-Order
-Own workshop on CodersLab bootcamp
+Own project on CodersLab bootcamp
