@@ -3,32 +3,32 @@
     {
       "id": 1,
       "name": "Margarita",
-      "price": 20
+      "price": 20.00
     },
     {
       "id": 2,
       "name": "Capriciosa",
-      "price": 23
+      "price": 23.00
     },
     {
       "id": 3,
       "name": "Peperoni",
-      "price": 28
+      "price": 28.00
     },
     {
       "id": 4,
       "name": "Napoletana",
-      "price": 30
+      "price": 30.00
     },
     {
       "id": 5,
       "name": "BBQ",
-      "price": 30
+      "price": 30.00
     },
     {
       "id": 6,
       "name": "Diavola",
-      "price": 32
+      "price": 32.00
       }
   ],
   "extras": [
@@ -60,16 +60,6 @@
     {
       "id": 6,
       "name": "Broccoli",
-      "price": 2.50
-    },
-    {
-      "id": 7,
-      "name": "Olive",
-      "price": 2.50
-    },
-    {
-      "id": 8,
-      "name": "Add Sauce",
       "price": 2.50
     }
   ]

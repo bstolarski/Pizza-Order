@@ -1,21 +1,30 @@
 import React, {Component} from 'react';
+import {useState} from 'react';
 
-export default class PizzaChoose extends Component {
-    handleChangePizza = () => {
-        const {eventClick, id, name, price} = this.props;
-        if (typeof (eventClick) === "function") {
+export function PizzaChoose(props) {
+
+    const [select, setSelect] = useState("");
+
+    const handleSelectChange = event => {
+        const {eventClick, id, name, price} = props;
+        const value = event.target.value;
+        setSelect(value);
+        if (typeof eventClick === 'function') {
             eventClick(id, name, price);
         }
     };
 
-    render() {
-        const {id, name, price} = this.props;
-        return (
-            <>
-                <label className="btn">{name} - {price} zł
-                    <input key={id} onChange={this.handleChangePizza} type="radio" value={name}
-                           name="pizzaChose"/></label>
-            </>
-        )
-    }
+    const {id, name, price} = props;
+    return (
+        <label className={select === {name} ? 'single-element checked-pizza' : 'single-element'}>
+            {name} - {price} zł
+            <input className='btn-size-input'
+                   type="radio"
+                   name="pizzaChose"
+                   value={name}
+                   onClick={event => handleSelectChange(event)}
+                   key={id}
+            />
+        </label>
+    )
 }

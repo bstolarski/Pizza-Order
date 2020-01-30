@@ -3,6 +3,7 @@
   background: linear-gradient(180deg, $primary-color 36.98%, rgba(239, 20, 20, 0) 100%);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  border: none;
 }
 .btn-primary {
   font-size: 3em;
@@ -14,11 +15,7 @@
   width: 302px;
   height: 73px;
 }
-.btn-size {
-  font-size: 2em;
-  width: 55px;
-  height: 55px;
-}
+
 .btn-secondary {
   font-size: 1.5em;
   width: 194px;
@@ -27,4 +24,24 @@
 .btn-plus {
   width: 30px;
   height: 29px;
+}
+
+//Btn Size
+.btn-size-label {
+  font-size: 2em;
+  padding: 0 15px;
+  margin: 0 22px;
+  width:55px;
+  height: 55px;
+  border-radius: 20px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  &:hover {
+    background: linear-gradient(180deg, $primary-color 36.98%, rgba(239, 20, 20, 0) 100%);
+    border: none;
+  }
+  &.checked {
+    background: linear-gradient(180deg, $primary-color 36.98%, rgba(239, 20, 20, 0) 100%);
+  }
 }

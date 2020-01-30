@@ -1,0 +1,36 @@
+.section-pizza-create {
+  position: relative;
+}
+
+.section-pizza-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-elements {
+  width: 292px;
+  height: 400px;
+  background: #221C1C;
+  box-shadow: inset 12px 12px 25px rgba(0, 0, 0, 0.25), inset -12px -12px 25px #1D1919;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-element {
+  color: #F1F3F6;
+  font-family: Rock Salt, sans-serif;
+  line-height: 24px;
+  width: 266px;
+  height: 47px;
+  border-radius: 10px;
+  &:hover {
+    background-color: #4B4646;
+  }
+  &.checked-pizza {
+    background-color: #EF1414;
+  }
+}
