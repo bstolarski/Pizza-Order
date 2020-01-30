@@ -11,7 +11,8 @@
 
 .single-order-element {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: #221C1C;
   border-radius: 20px;
   box-shadow: inset 12px 12px 25px rgba(0, 0, 0, 0.25), inset -12px -12px 25px #1D1919;

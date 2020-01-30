@@ -16,9 +16,13 @@ export default class CreatePizza extends Component {
         products: null,
         extras: null,
         err: null,
+        error: null,
         currentChoosePizza: null,
-        currentChooseExtra: null,
-        currentChooseSize: null,
+        currentChooseExtra: {
+            name: null,
+            price: null
+        },
+        currentChooseSize: "Small",
         order: {}
     };
 
@@ -32,20 +36,33 @@ export default class CreatePizza extends Component {
             err => this.setState({err: err})
         )
     }
+
     handleDisplayCart = () => {
-        const {currentChoosePizza,currentChooseExtra,currentChooseSize} = this.state;
+        const {currentChoosePizza, currentChooseExtra, currentChooseSize} = this.state;
+        if (currentChoosePizza === null) {
+            this.setState({
+                error: "You have to choose pizza!"
+            })
+        } else {
+            this.setState({
+                order: {
+                    typePizza: currentChoosePizza.name,
+                    pricePizza: currentChoosePizza.price,
+                    typeExtra: currentChooseExtra.name,
+                    priceExtra: currentChooseExtra.price,
+                    sizePizza: currentChooseSize
+                }
+            });
+            this.setState({
+                displayCart: !this.state.displayCart
+            });
+        }
+    };
+
+    handleHideCart = () => {
         this.setState({
-            order: {
-                typePizza: currentChoosePizza.name,
-                pricePizza: currentChoosePizza.price,
-                typeExtra: currentChooseExtra.name,
-                priceExtra: currentChooseExtra.price,
-                sizePizza: currentChooseSize
-            }
-        });
-        this.setState({
-            displayCart: !this.state.displayCart
-        });
+            displayCart: false,
+        })
     };
 
     handleDisplayPizza = () => {
@@ -90,6 +107,8 @@ export default class CreatePizza extends Component {
         })
     };
 
+
+
     render() {
         const {displayPizzas, displayExtras, displayCart, displayImg} = this.state;
         return (
@@ -113,8 +132,9 @@ export default class CreatePizza extends Component {
                     </ul>}
                     <SizeChoose eventClick={this.handleChangeSize}/>
                     <button onClick={this.handleDisplayCart} className='btn btn-secondary'>Add to Cart</button>
+                    {!this.state.currentChoosePizza && <p className='error'>{this.state.error}</p>}
                 </section>
-                {displayCart && <Cart order={this.state.order}/>}
+                {displayCart && <Cart order={this.state.order} eventClick={this.handleHideCart} />}
             </>
         )
     }
