@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import {NavLink} from "react-router-dom";
 
-export default class ListElement extends Component {
-
-    handleChangePizza = () => {
+export default class ExtraChoose extends Component {
+    handleChangeExtra = () => {
         const {eventClick, id, name, price} = this.props;
         if (typeof (eventClick) === "function") {
             eventClick(id, name, price);
@@ -15,7 +13,8 @@ export default class ListElement extends Component {
         return (
             <>
                 <label className="btn">{name} - {price} zł
-                    <input key={id} onChange={this.handleChangePizza} type="radio" value={name} name="pizzaChose"/></label>
+                    <input key={id} onChange={this.handleChangeExtra} type="radio" value={name}
+                           name="pizzaChose"/></label>
             </>
         )
     }

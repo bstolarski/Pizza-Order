@@ -2,11 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  h1 {
-    font-size: 4em;
+.header-logo {
+  text-align: center;
+  span:first-of-type {
+    font-size: 4rem;
     line-height: 95px;
-    text-align: center;
+    color: white;
+  }
+  span:last-of-type {
     color: $primary-color;
+    font-size: 4rem;
+    line-height: 95px;
   }
 }

@@ -7,7 +7,10 @@ export default class HeaderPage extends Component {
         return (
             <header className="HeaderLogo">
                 <NavLink to='/'>
-                    <h1>Pizza Boiz</h1>
+                    <h1 className="header-logo">
+                        <span>Pizza</span>
+                        <span>Boiz</span>
+                    </h1>
                 </NavLink>
             </header>
         )

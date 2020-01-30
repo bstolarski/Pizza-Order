@@ -5,6 +5,14 @@ export default function AddToCartLocalStorageServices(itemToAdd) {
     return newItems;
 }
 
-export function GetOrderFromLocalStorage(){
+export function GetOrderFromLocalStorage() {
     return JSON.parse(window.localStorage.getItem('order'));
+}
+
+export class LocalStorageSave {
+    constructor(name, price, size) {
+        this.name = name;
+        this.price = price;
+        this.size = size;
+    }
 }

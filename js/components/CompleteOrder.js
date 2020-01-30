@@ -7,7 +7,7 @@ export default class CompleteOrder extends Component {
         return (
             <>
                 <HeaderPage/>
-                <img/>
+                <img src={"assets/PizzaImg.png"} alt="pizza"/>
                 <button>Your pizza is Coming!</button>
             </>
         )

@@ -16,7 +16,7 @@ $font-color-brown: #4B4646;
 
 .container {
   max-width: 414px;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,4 +25,19 @@ $font-color-brown: #4B4646;
 
 input[type="radio"] {
   display: none;
+}
+
+.section-pizza-create {
+  position: relative;
+}
+
+.cartContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #221C1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
