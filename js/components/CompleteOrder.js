@@ -7,7 +7,7 @@ export default class CompleteOrder extends Component {
         return (
             <>
                 <HeaderPage/>
-                <img className='img-complete-order' src={"assets/PizzaImg.png"} alt="pizza"/>
+                <img className='img-complete-order complete-pizza-animation-rotate' src={"assets/PizzaImg.png"} alt="pizza"/>
                 <NavLink to='/'>
                     <button className='btn btn-complete'>Your pizza is Coming!</button>
                 </NavLink>

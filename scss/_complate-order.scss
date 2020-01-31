@@ -10,3 +10,23 @@
     font-size: 1.4em;
   }
 }
+
+.complete-pizza-animation-rotate {
+  transition: transform .8s ease-in-out;
+  animation-name: infinity-rotate;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes infinity-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
