@@ -132,7 +132,7 @@ export default class CreatePizza extends Component {
             <>
                 <section className='cartContainer'>
                     <HeaderPage/>
-                    {displayImg && <img src={"assets/PizzaImg.png"} alt="pizza"/>}
+                    {displayImg && <img className={displayImg ? 'img-pizza rotate' : 'img-pizza'}  src={"assets/PizzaImg.png"} alt="pizza"/>}
                     <button onClick={this.handleDisplayPizza} className='btn btn-pizza'>Pizza</button>
                     {displayPizzas &&
                     <ul className='list-elements'>

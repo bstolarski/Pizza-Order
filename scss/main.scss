@@ -6,7 +6,7 @@ $font-color-brown: #4B4646;
 //Header - Logo
 @import "header";
 //Main - Landing Page
-@import "mainLandingPage";
+@import "main-landing-page";
 //Buttons
 @import "components/buttons";
 //Form Register
@@ -17,6 +17,8 @@ $font-color-brown: #4B4646;
 @import "pizza-create";
 //Cart
 @import "cart";
+//Complete Order
+@import "complate-order";
 
 .container {
   max-width: 414px;
@@ -27,29 +29,9 @@ $font-color-brown: #4B4646;
   flex-direction: column;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-//Complete Order
-.img-complete-order {
-  margin-top: 100px;
-}
 
 
-.info-log {
-  color: $font-color-white;
 
-  p {
-    text-align: center;
-    font-size: 1.4em;
-  }
-}
 
-.disabled-link {
-  text-decoration: none;
 
-  &:focus, &:hover, &:visited, &:link, &:active {
-    text-decoration: none;
-  }
-}
+

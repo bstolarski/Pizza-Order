@@ -5,3 +5,11 @@
   box-sizing: border-box;
   font-family: Rock Salt, cursive;
 }
+
+.disabled-link {
+  text-decoration: none;
+
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
+}

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import HeaderPage from "./HeaderPage";
 import {useState} from 'react';
-import SaveOrderRestApiServices from "../services/SaveOrderRestApiServices";
+import saveOrderRestApiServices from "../services/SaveOrderRestApiServices";
 
 export default function ConfirmOrderForm(props) {
 
@@ -24,14 +24,14 @@ export default function ConfirmOrderForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const order = props.order;
-        SaveOrderRestApiServices(order, state);
+        saveOrderRestApiServices(order, state);
     };
 
     return (
         <>
             <section className='cartContainer'>
                 <HeaderPage/>
-                <form onSubmit={handleSubmit} className='form-complete'>
+                <form onSubmit={event => handleSubmit(event)} className='form-complete'>
                     <p>Your Address</p>
                     <input type="text" placeholder={"Your Address"} name="address"
                            value={state.address}
@@ -70,7 +70,8 @@ export default function ConfirmOrderForm(props) {
                         />
                     </label><p>PayPal</p>
                     <NavLink to='/CompleteOrder'>
-                        <button className='btn btn-complete'>{props.order.pricePizza + props.order.priceExtra} zł
+                        <button className='btn btn-complete'>
+                            {props.order.pricePizza + props.order.priceExtra} zł
                         </button>
                     </NavLink>
                 </form>

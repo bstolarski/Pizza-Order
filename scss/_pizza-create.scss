@@ -28,9 +28,11 @@
   width: 266px;
   height: 47px;
   border-radius: 10px;
+
   &:hover {
     background-color: #4B4646;
   }
+
   &.checked-pizza {
     background-color: #EF1414;
   }
@@ -39,4 +41,32 @@
 .error {
   color: $primary-color;
   font-size: 1.4em;
+}
+
+.img-pizza {
+  transition: transform .8s ease-in-out;
+
+  &.rotate {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(90deg) scale(1);
+  }
+}
+
+.slide-fade {
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
 }
