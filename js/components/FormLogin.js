@@ -15,11 +15,13 @@ export default class FormLogin extends Component {
                     <NavLink to='/CreatePizza'>
                         <button className='btn btn-primary'>Sign In</button>
                     </NavLink>
-                    <p><span>Or</span></p>
-                    <p>Already don't have an Account?
-                        <NavLink to='/FormRegister'>
-                            Create
-                        </NavLink></p>
+                    <div className='info-log'>
+                        <p>Or</p>
+                        <p>Already don't have an Account?
+                            <NavLink className='disabled-link' to='/FormRegister'>
+                                Create
+                            </NavLink></p>
+                    </div>
                 </form>
             </>
         )

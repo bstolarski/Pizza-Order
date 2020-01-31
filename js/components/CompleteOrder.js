@@ -7,8 +7,10 @@ export default class CompleteOrder extends Component {
         return (
             <>
                 <HeaderPage/>
-                <img src={"assets/PizzaImg.png"} alt="pizza"/>
-                <button>Your pizza is Coming!</button>
+                <img className='img-complete-order' src={"assets/PizzaImg.png"} alt="pizza"/>
+                <NavLink to='/'>
+                    <button className='btn btn-complete'>Your pizza is Coming!</button>
+                </NavLink>
             </>
         )
     }

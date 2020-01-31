@@ -31,6 +31,25 @@ input[type="radio"] {
   display: none;
 }
 
+//Complete Order
+.img-complete-order {
+  margin-top: 100px;
+}
 
 
+.info-log {
+  color: $font-color-white;
 
+  p {
+    text-align: center;
+    font-size: 1.4em;
+  }
+}
+
+.disabled-link {
+  text-decoration: none;
+
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
+}

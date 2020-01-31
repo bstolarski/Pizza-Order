@@ -1,32 +1,80 @@
 import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import HeaderPage from "./HeaderPage";
+import {useState} from 'react';
+import SaveOrderRestApiServices from "../services/SaveOrderRestApiServices";
 
-export default class ConfirmOrderForm extends Component {
+export default function ConfirmOrderForm(props) {
 
-    render() {
-        return (
-            <>
+    const [state, setState] = React.useState({
+        address: "",
+        city: "",
+        phone: "",
+        payment: "",
+    });
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setState({
+            ...state,
+            [e.target.name]: value
+        })
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const order = props.order;
+        SaveOrderRestApiServices(order, state);
+    };
+
+    return (
+        <>
+            <section className='cartContainer'>
                 <HeaderPage/>
-                <form>
+                <form onSubmit={handleSubmit} className='form-complete'>
                     <p>Your Address</p>
-                    <input/>
+                    <input type="text" placeholder={"Your Address"} name="address"
+                           value={state.address}
+                           onChange={event => handleChange(event)}/>
                     <p>City</p>
-                    <input/>
+                    <input type="text" placeholder={"City"} name="city"
+                           value={state.city}
+                           onChange={event => handleChange(event)}/>
                     <p>Phone number</p>
-                    <input/>
+                    <input type="text" placeholder={"Phone number"} name="phone"
+                           value={state.phone}
+                           onChange={event => handleChange(event)}/>
                     <p>Payment Method</p>
-                    <label>
-                        <input type="checkbox" value="cash" name="payment"/>Cash</label>
-                    <label>
-                        <input type="checkbox" value="card" name="payment"/>Debit Card</label>
-                    <label>
-                        <input type="checkbox" value="paypal" name="payment"/>Paypal</label>
+                    <label className={state.payment === 'cash' ? 'btn-payment checked' : 'btn-payment'}>
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                            onClick={event => handleChange(event)}
+                        />
+                    </label><p>Cash</p>
+                    <label className={state.payment === 'card' ? 'btn-payment checked' : 'btn-payment'}>
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="card"
+                            onClick={event => handleChange(event)}
+                        />
+                    </label><p>Card</p>
+                    <label className={state.payment === 'paypal' ? 'btn-payment checked' : 'btn-payment'}>
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="paypal"
+                            onClick={event => handleChange(event)}
+                        />
+                    </label><p>PayPal</p>
                     <NavLink to='/CompleteOrder'>
-                        <button className='btn'>Suma do zapłacenia</button>
+                        <button className='btn btn-complete'>{props.order.pricePizza + props.order.priceExtra} zł
+                        </button>
                     </NavLink>
                 </form>
-            </>
-        )
-    }
+            </section>
+        </>
+    )
 }

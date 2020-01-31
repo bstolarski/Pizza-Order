@@ -17,3 +17,18 @@
   border-style: none;
   margin-bottom: 50px;
 }
+
+.form-complete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    font-size: 1.4em;
+    color: $font-color-white;
+  }
+  input {
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+  }
+}

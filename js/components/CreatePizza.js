@@ -66,9 +66,18 @@ export default class CreatePizza extends Component {
     };
 
     handleDisplayPizza = () => {
+        const {displayPizzas, displayImg, displayExtras} = this.state;
+        if (!displayImg && displayExtras) {
+            this.setState({
+                displayImg: false
+            })
+        } else {
+            this.setState({
+                displayImg: !displayImg
+            })
+        }
         this.setState({
-            displayPizzas: !this.state.displayPizzas,
-            displayImg: !this.state.displayImg
+            displayPizzas: !displayPizzas,
         });
         if (this.state.displayExtras) {
             this.setState({
@@ -78,11 +87,20 @@ export default class CreatePizza extends Component {
     };
 
     handleDisplayExtra = () => {
+        const {displayPizzas, displayImg, displayExtras} = this.state;
+        if (!displayImg && displayPizzas) {
+            this.setState({
+                displayImg: false
+            })
+        } else {
+            this.setState({
+                displayImg: !displayImg
+            })
+        }
         this.setState({
-            displayExtras: !this.state.displayExtras,
-            displayImg: !this.state.displayImg
+            displayExtras: !displayExtras,
         });
-        if (this.state.displayPizzas) {
+        if (displayPizzas) {
             this.setState({
                 displayPizzas: false
             })
@@ -108,7 +126,6 @@ export default class CreatePizza extends Component {
     };
 
 
-
     render() {
         const {displayPizzas, displayExtras, displayCart, displayImg} = this.state;
         return (
@@ -123,6 +140,7 @@ export default class CreatePizza extends Component {
                             <PizzaChoose id={product.id} name={product.name} price={product.price}
                                          eventClick={this.handleChangePizza}/>)}
                     </ul>}
+                    <SizeChoose eventClick={this.handleChangeSize}/>
                     <button onClick={this.handleDisplayExtra} className='btn btn-secondary'>Extras</button>
                     {displayExtras &&
                     <ul className='list-elements'>
@@ -130,11 +148,10 @@ export default class CreatePizza extends Component {
                             <ExtraChoose id={extra.id} name={extra.name} price={extra.price}
                                          eventClick={this.handleChangeExtra}/>)}
                     </ul>}
-                    <SizeChoose eventClick={this.handleChangeSize}/>
                     <button onClick={this.handleDisplayCart} className='btn btn-secondary'>Add to Cart</button>
                     {!this.state.currentChoosePizza && <p className='error'>{this.state.error}</p>}
                 </section>
-                {displayCart && <Cart order={this.state.order} eventClick={this.handleHideCart} />}
+                {displayCart && <Cart order={this.state.order} eventClick={this.handleHideCart}/>}
             </>
         )
     }

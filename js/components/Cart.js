@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
-import {NavLink} from "react-router-dom";
 import HeaderPage from "./HeaderPage";
+import ConfirmOrderForm from "./ConfirmOrderForm";
 
 export default class Cart extends Component {
-state = {
-    cart: this.props.order
-};
+    state = {
+        cart: this.props.order,
+        displayConfirm: false
+    };
     handleClickAddMore = () => {
-        if(typeof  this.props.eventClick === 'function'){
+        if (typeof this.props.eventClick === 'function') {
             this.props.eventClick();
         }
+    };
+    handleDisplayConfirm = () => {
+        this.setState({
+            displayConfirm: !this.state.displayConfirm
+        });
     };
 
     render() {
@@ -32,12 +38,11 @@ state = {
                                 <p className='text-title'>With {order.typeExtra}</p>
                             </div>
                         </>}
-                        <button className='btn btn-secondary btn-delete'>Delete</button>
                     </div>
-                    <NavLink to='/ConfirmOrderForm'>
-                        <button className='btn btn-secondary'>Place Order {order.pricePizza + order.priceExtra}</button>
-                    </NavLink>
+                    <button onClick={this.handleDisplayConfirm} className='btn btn-secondary'>Place
+                        Order {order.pricePizza + order.priceExtra}</button>
                 </section>
+                {this.state.displayConfirm && <ConfirmOrderForm order={this.state.cart}/>}
             </>
         )
     }

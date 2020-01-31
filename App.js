@@ -11,10 +11,7 @@ import ConfirmOrderForm from "./js/components/ConfirmOrderForm";
 import CompleteOrder from "./js/components/CompleteOrder";
 
 function App() {
-
-
     let backGroundStyle = {
-        backgroundColor: '#221C1C',
         backgroundImage: `url(./assets/pizza.png)`,
         backgroundPosition: 'center',
         backgroundSize: 'cover'

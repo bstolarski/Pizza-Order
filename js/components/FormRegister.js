@@ -10,17 +10,19 @@ export default class FormRegister extends Component {
             <>
                 <HeaderPage/>
                 <form className='form'>
-                    <input name='name' type='text' placeholder='Name'/>
+                    <input className='form-user' name='name' type='text' placeholder='Name'/>
                     <input name='password' type='text' placeholder='Password'/>
                     <input name='email' type='email' placeholder='Email'/>
                     <NavLink to='/CreatePizza'>
                         <button className='btn btn-primary'>Create</button>
                     </NavLink>
-                    <p><span>Or</span></p>
-                    <p>Already have an Account?
-                        <NavLink to='/FormLogin'>
-                            Sign in
-                        </NavLink></p>
+                    <div className='info-log'>
+                        <p>Or</p>
+                        <p>Already have an Account?
+                            <NavLink className='disabled-link' to='/FormLogin'>
+                                Sign in
+                            </NavLink></p>
+                    </div>
                 </form>
             </>
         )

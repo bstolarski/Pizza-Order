@@ -6,7 +6,7 @@ export default class HeaderPage extends Component {
     render() {
         return (
             <header className="HeaderLogo">
-                <NavLink to='/'>
+                <NavLink className='disabled-link' to='/'>
                     <h1 className="header-logo">
                         <span>Pizza</span>
                         <span>Boiz</span>
