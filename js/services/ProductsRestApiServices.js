@@ -1,7 +1,7 @@
 import Product from "../model/Product";
 
 export default class ProductsRestApiService {
-    static restApiUrl = 'http://localhost:3000';
+    static restApiUrl = 'http://my-json-server.typicode.com/bstolarski/Pizza-Order';
 
     static getProducts(callback, errCallback) {
         fetch(`${this.restApiUrl}/products`)
