@@ -2,7 +2,7 @@ import CompleteOrder from "../model/CompleteOrder";
 
 export default function saveOrderRestApiServices(order, state) {
     const data = new CompleteOrder(order, state);
-    fetch('http://localhost:3000/orders', {
+    fetch('https://my-json-server.typicode.com/bstolarski/Pizza-Order/orders', {
         method: "POST",
         headers: {
             'Accept': 'application/json',
