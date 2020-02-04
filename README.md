@@ -19,7 +19,7 @@ npm start
 
 ## Live version
 
-The live version of current state of application is available at https://serene-beaver-32af35.netlify.com
+The live version of current state of application is available at https://bstolarski.github.io/Pizza-Order/
 The project is still under development.
 
 ## Built With
