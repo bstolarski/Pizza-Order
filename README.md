@@ -1,7 +1,7 @@
 # Pizza-Order
 Own project on CodersLab bootcamp
 
-Simply mobile shop app. Allows the user to choose and order his best type of pizza.
+Simple fake store mobile app. Allows the user to choose and order his best type of pizza.
 
 ## Installation
 
